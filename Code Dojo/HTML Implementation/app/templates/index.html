@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../static/marker.js" type="text/javascript"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script>
+      function initMap() {
+          const cp0 = {lat: {{a}} , lng: {{b}}};
+          const map = new google.maps.Map(document.getElementById("map"),{
+              zoom: 16,
+              center: cp0,
+          });
+      }
+      function tryCall(){
+          finalStun({{c}},{{d}});
+      }
+      function tryCall2(){
+          finalStun2();
+      }
+    </script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background-color: black;
+      }
+
+      .btn {
+        padding: 10px 30px;
+        background-color: black;
+        color: #fff;
+        border: 1px #fff solid;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        right: 3rem;
+        animation: slideInFromRight 0.8s ease-in;
+      }
+
+      .btn-left {
+        top: 10rem;
+      }
+
+      .btn-right {
+        top: 13rem;
+        padding: 10px 32px;
+        margin-right: 4px;
+      }
+
+      .btn:hover {
+        transform: scale(0.98);
+      }
+
+      p {
+        padding-left: 16rem;
+        padding-top: 10px;
+      }
+
+      .showcase {
+        height: 550px;
+        background-color: #992b25;
+        position: relative;
+      }
+
+      .showcase::before,
+      .showcase::after {
+        content: "";
+        position: absolute;
+        height: 80px;
+        bottom: -70px;
+        right: 0;
+        left: 0;
+        background: black;
+        transform: skewY(-3deg);
+        -webkit-transform: skewY(-3deg);
+        -moz-transform: skewY(-3deg);
+        -ms-transform: skewY(-3deg);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        overflow: auto;
+        padding: 0 40px;
+      }
+
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+
+      @keyframes slideInFromRight {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="showcase">
+      <div class="container">
+        <div id="map" style="width: 780px; height: 500px"></div>
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key={Your API Key}&callback=initMap"
+          async
+        ></script>
+      </div>
+    </section>
+    <p>
+      <button class="btn btn-left" onclick="tryCall()">Toggle Display</button>
+      <button class="btn btn-right" onclick="tryCall2()">Hide Display</button>
+    </p>
+  </body>
+</html>
