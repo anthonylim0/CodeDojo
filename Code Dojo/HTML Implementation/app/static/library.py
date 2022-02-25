@@ -10,7 +10,7 @@ import random
 from math import radians, cos, sin, asin, sqrt
 
 user_filePath = {Your File Path}
-csv = {Your CSV File}
+csv = "delivery_2022_12_14_orchard.csv"
 data = pd.read_csv(user_filePath + csv)
 
 #This route list is used for demonstration purposes
